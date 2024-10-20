@@ -1,3 +1,5 @@
+// AGUSTIN FORTE - L: 120310/0 - Video:https://youtu.be/UEwJNP48Tes
+
 let pantalla = 0;
 let on;
 let imagenes = [];
