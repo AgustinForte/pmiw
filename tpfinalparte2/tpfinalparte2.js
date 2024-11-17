@@ -66,7 +66,7 @@ function jugar() {
     obstaculos.push(new Obstaculo());
   }
 
-  if (frameCount % 400 === 0) { // Por ejemplo, cada 300 frames
+  if (frameCount % 400 === 0) { 
     potenciadores.push(new Potenciador());
   }
 
