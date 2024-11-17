@@ -1,6 +1,6 @@
 // AGUSTIN FORTE - L: 120310/0 - Video:https://youtu.be/WCx-0c8TLUY
 
-let estadoJuego = 'inicio'; // 'inicio', 'jugando', 'creditos', 'perdido'
+let estadoJuego = 'inicio'; 
 let jugador;
 let obstaculos = [];
 let puntuacion = 0;
@@ -25,7 +25,6 @@ function setup() {
   sonidoMusica = document.getElementById("sonido-musica");
   jugador = new Jugador();
   
-  // Crear botones como instancias de la clase Boton
   botonInicio = new Boton('Inicio', width / 2 - 30, height / 2 + 50, iniciarJuego);
   botonReiniciar = new Boton('Reiniciar', width / 2 - 30, height / 2 + 100, reiniciarJuego);
 }
@@ -35,10 +34,10 @@ function draw() {
   if (estadoJuego === 'inicio') {
     mostrarPantallaInicio();
   } else if (estadoJuego === 'jugando') {
-    image(imagenfondo, 0, 0, width, height); // Mostrar fondo en el juego
+    image(imagenfondo, 0, 0, width, height); 
     jugar();
   } else if (estadoJuego === 'creditos') {
-    image(imagenfondo, 0, 0, width, height); // Mostrar fondo en los créditos
+    image(imagenfondo, 0, 0, width, height); 
     mostrarCreditos();
   } else if (estadoJuego === 'perdido') {
     mostrarPantallaPerdido();
@@ -86,19 +85,18 @@ function jugar() {
     }
   }
 
- // Dibujar y mover potenciadores
     for (let i = potenciadores.length - 1; i >= 0; i--) {
     potenciadores[i].mover();
     potenciadores[i].mostrar();
 
     if (potenciadores[i].recolectado(jugador)) {
-      puntuacion += 2; // Otorga 2 puntos de bonificación
-      potenciadores.splice(i, 1); // Elimina el potenciador recolectado
-      continue; // Continua el bucle para evitar problemas de índice
+      puntuacion += 2;
+      potenciadores.splice(i, 1); 
+      continue; 
     }
 
     if (potenciadores[i].x < -potenciadores[i].tamaño) {
-      potenciadores.splice(i, 1); // Elimina potenciadores fuera de la pantalla
+      potenciadores.splice(i, 1); 
     }
   }
 
