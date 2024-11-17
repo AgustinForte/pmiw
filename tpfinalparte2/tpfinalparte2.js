@@ -1,4 +1,4 @@
-// AGUSTIN FORTE - L: 120310/0 - Video:https://youtu.be/WCx-0c8TLUY
+// AGUSTIN FORTE - L: 120310/0 - Video:https://youtu.be/4xqWT_fidnI
 
 let estadoJuego = 'inicio'; 
 let jugador;
