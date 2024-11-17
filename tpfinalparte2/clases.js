@@ -58,7 +58,7 @@ class Boton {
     this.boton.position(this.x, this.y);
     this.boton.size(this.ancho, this.alto);
     this.boton.mousePressed(() => accion());
-    this.ocultar(); // Oculta el botón inicialmente
+    this.ocultar(); 
   }
 
   mostrar() {
@@ -70,26 +70,26 @@ class Boton {
   }
 }
 
-// Clase para el objeto Potenciador
+
 class Potenciador {
   constructor() {
-    this.tamaño = 30; // Tamaño del potenciador
-    this.x = width; // Aparece en el borde derecho del canvas
-    this.y = random(height - 100, height - 50); // Posición más baja, cerca del suelo
-    this.velocidad = 3; // Velocidad de movimiento hacia la izquierda
-    this.imagen = loadImage('data/bonus.png'); // Carga la imagen del potenciador
+    this.tamaño = 30; 
+    this.x = width; 
+    this.y = random(height - 100, height - 50); 
+    this.velocidad = 3; 
+    this.imagen = loadImage('data/bonus.png'); 
   }
 
   mover() {
-    this.x -= this.velocidad; // Mueve el potenciador a la izquierda
+    this.x -= this.velocidad; 
   }
 
   mostrar() {
-    image(this.imagen, this.x, this.y, this.tamaño, this.tamaño); // Muestra el potenciador en la pantalla
+    image(this.imagen, this.x, this.y, this.tamaño, this.tamaño); 
   }
 
   recolectado(jugador) {
-    // Verifica si el jugador ha recogido el potenciador
+
     return (
       jugador.x < this.x + this.tamaño &&
       jugador.x + jugador.tamaño > this.x &&
