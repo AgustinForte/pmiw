@@ -1,4 +1,5 @@
-// Variables globales
+// AGUSTIN FORTE - L: 120310/0 - Video:https://youtu.be/WCx-0c8TLUY
+
 let estadoJuego = 'inicio'; // 'inicio', 'jugando', 'creditos', 'perdido'
 let jugador;
 let obstaculos = [];
