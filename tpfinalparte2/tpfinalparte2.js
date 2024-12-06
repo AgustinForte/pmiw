@@ -1,6 +1,4 @@
 // AGUSTIN FORTE - L: 120310/0 - Video:
-//CLASES
-//CLASES
 let juego;
 
 function preload() {
