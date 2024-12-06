@@ -129,21 +129,17 @@ class Juego {
     this.botonReiniciar.ocultar();
     image(imagenfondo, 0, 0, width, height);
 
-    // Actualización del jugador
     this.jugador.actualizar();
     this.jugador.mostrar();
 
-    // Creación de obstáculos cada 60 frames
     if (frameCount % 60 === 0) {
       this.obstaculos.push(new Obstaculo());
     }
 
-    // Creación de potenciadores cada 180 frames
     if (frameCount % 400 === 0) {
       this.potenciadores.push(new Potenciador());
     }
 
-    // Actualización y eliminación de obstáculos
     for (let i = this.obstaculos.length - 1; i >= 0; i--) {
       this.obstaculos[i].mover();
       this.obstaculos[i].mostrar();
@@ -163,20 +159,17 @@ class Juego {
       this.potenciadores[i].mover();
       this.potenciadores[i].mostrar();
 
-      // Verificar si el jugador recoge el potenciador
       if (this.potenciadores[i].recolectado(this.jugador)) {
-        this.puntuacion += 2;  // Se puede ajustar la cantidad que aumenta el puntaje
-        this.potenciadores.splice(i, 1);  // Eliminar el potenciador
+        this.puntuacion += 2; 
+        this.potenciadores.splice(i, 1); 
         continue;
       }
 
-      // Si el potenciador se sale de la pantalla, eliminarlo
       if (this.potenciadores[i].x < -this.potenciadores[i].tamaño) {
         this.potenciadores.splice(i, 1);
       }
     }
 
-    // Mostrar puntuación
     textSize(16);
     text(`Puntuación: ${this.puntuacion}`, width / 2, 20);
     
@@ -187,7 +180,7 @@ class Juego {
   }
 
   mostrarCreditos() {
-    image(imagenganaste, 0, 0, width, height);  // Mostrar la imagen de fondo de créditos
+    image(imagenganaste, 0, 0, width, height);  
     fill(0, 255, 0);
     textAlign(CENTER);
     textSize(32);
@@ -195,7 +188,7 @@ class Juego {
     textSize(16);
     text(`Puntuación final: ${this.puntuacion}`, width / 2, height / 2);
     text(`Nuevo puntaje objetivo: ${this.mejorPuntuacion + 10}`, width / 2, height / 2 + 40);
-    this.botonReiniciar.mostrar();  // Mostrar el botón para reiniciar el juego
+    this.botonReiniciar.mostrar();  
   }
 
   mostrarPantallaPerdido() {
